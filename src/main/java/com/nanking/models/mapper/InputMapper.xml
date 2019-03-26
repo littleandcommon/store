@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nanking.models.dao.InputDao">
+    <resultMap id="BaseResultMap" type="com.nanking.models.domain.Input">
+        <id column="Input_id" jdbcType="INTEGER" property="InputId"></id>
+        <result column="Input_type" jdbcType="CHAR" property="InputType"></result>
+        <result column="Input_time" jdbcType="CHAR" property="InputTime"></result>
+        <result column="Input_person" jdbcType="CHAR" property="InputPerson"></result>
+
+    </resultMap>
+
+    <sql id="Base_Colum_List">
+        Input_id,Input_time,Input_person,Input_time
+    </sql>
+
+
+
+    <insert  id="add"  parameterType="com.nanking.models.domain.Input">
+        insert into input (input_id,input_Type,input_person.input_time) values(#{input.InputId},#{input.InputType},#{input.InputPerson},#{input.InputTime})
+    </insert>
+
+    <update id="modify" parameterType="String"  >
+        alter  input set name=#{name} and number=#{number} where id=#{id}
+    </update>
+
+</mapper>
+
