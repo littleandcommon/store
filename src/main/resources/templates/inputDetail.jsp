@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>入库详情</title>
+</head>
+<body>
+<form name="input"  action="/addDetail" method="post">
+    <input type="text" name="id"  value=""/>
+    <input type="text" name="inputType"  value=""/>
+    <input type="text" name="inputPerson"  value=""/>
+    <input type="text" name="inputTime"  value=""/>
+    <input type="submit" name="提交"/>
+</form>
+
+</body>
+</html>

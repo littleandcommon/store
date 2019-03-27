@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.annotation.Reference;
 import org.springframework.session.Session;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,28 +19,33 @@ import javax.validation.Valid;
 import java.io.IOException;
 
 @Controller
-public class InputCtrl extends BaseCtrl {
-    //@Autowired
-    @Reference
+public class InputCtrl {
+    @Autowired
     private InputService inputService;
 /**添加新的入库订单/修改入库订单
  *
  */
+@RequestMapping(value="/",method=RequestMethod.GET)
+        public String login()
+{
+    return "input";
+}
     @RequestMapping(value="/add",method=RequestMethod.POST)
-    public String addInput(Input input)
+    public String addInput(Model model, Input input)
     {
-        Integer inputId=input.getInputId();
-        if(inputId==null)
+        Integer id=input.getId();
+        if(id==null)
         {
             //入库单号为空时，新增入库订单
-            inputService.add(input);
+           int result  =inputService.add(input);
         }
         else{
             //不为空，对订单进行修改
-            inputService.modify(input);
+          int result =inputService.modify(input);
         }
-
-       return "redirect:/inputDetail";
+         //model.addAttribute("input",ntIeger);
+        //入库主表填写完成后，跳转到入库详情表页面
+         return "redirect:/inputDetail";
 
 
 

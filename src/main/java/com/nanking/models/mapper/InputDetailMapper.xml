@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nanking.models.dao.InputDetailDao">
+    <resultMap id="BaseResultMap" type="com.nanking.models.domain.InputDetail">
+        <id column="input_detail_id" jdbcType="INTEGER" property="inputDetailId"></id>
+        <result column="input_id" jdbcType="CHAR" property="inputId"></result>
+        <result column="goods_name" jdbcType="CHAR" property="goodsName"></result>
+        <result column="goods_count" jdbcType="CHAR" property="goodsCount"></result>
+
+    </resultMap>
+
+    <sql id="Base_Colum_List">
+        input_detail_id,input_id,goods_name,goods_count
+    </sql>
+    <insert  id="addDetail"  parameterType="com.nanking.models.domain.InputDetail">
+        insert into input (input_detail_id,input_id,goods_name,goods_count) values(#{inputDetail.inputDetailId},#{inputDetail.inputId},#{inputDetail.goodsName},#{inputDetail.goodsCount})
+    </insert>
+
+    <update id="modifyDetail" parameterType="com.nanking.models.domain.InputDetail"  >
+        alter  input set name=#{name} and number=#{number} where id=#{id}
+    </update>
+
+</mapper>
+

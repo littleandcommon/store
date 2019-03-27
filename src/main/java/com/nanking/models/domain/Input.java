@@ -16,7 +16,7 @@ public class Input {
     public String inputPerson;
     public String inputOperation;
     public String storeName;
-    public int inputId;
+    public int id;
     public String goodsNumber;
 
     public String getStoreName() {
@@ -67,12 +67,12 @@ public class Input {
         this.inputOperation = inputOperation;
     }
 
-    public int getInputId() {
-        return inputId;
+    public int getId() {
+        return id;
     }
 
-    public void setInputId(int inputId) {
-        this.inputId = inputId;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getGoodsNumber() {

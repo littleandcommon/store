@@ -1,6 +1,7 @@
 package com.nanking.models.dao;
 
 import com.nanking.models.domain.Input;
+import com.nanking.models.domain.InputDetail;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
